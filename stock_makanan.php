@@ -1,5 +1,6 @@
 <?php
 include "query.php";
+secure("stock_makanan.php");
 $makan=get("makanan","SELECT * from makanan ");
 if(isset($_POST["delete"])){
 $id=$_POST["delid"];

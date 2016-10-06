@@ -1,3 +1,7 @@
+<?php 
+	include "query.php";
+	secure();
+ ?>
 <html>
 <head>
 <title>admin home</title>
@@ -13,7 +17,7 @@
 <li><a href="stock_makanan.php">Stock Makanan</a></li>
 <li><a href="stock_minuman.php">Stock Minuman</a></li>
 <li><a href="view_invoice.php">Invoice</a></li>
-<li><a href="index.php">Log out</a></li>
+<li><a href="logout.php">Log out</a></li>
 </ul>
 </div>
 </body>

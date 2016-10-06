@@ -1,6 +1,6 @@
 <?php
 include "query.php";
-
+secure("stock_minuman.php");
 $mnm=get("minuman","SELECT * from minuman");
 if(isset($_POST["delete"])){
 $id=$_POST["delid"];

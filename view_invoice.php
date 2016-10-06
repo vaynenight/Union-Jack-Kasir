@@ -1,6 +1,6 @@
 <?php
 include "query.php";
-
+secure("view_invoice.php");
 $mkn=get("Invoice","SELECT * from Invoice ");
 if(isset($_POST["delete"])){
 $id=$_POST["delid"];
