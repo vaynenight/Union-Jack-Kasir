@@ -1,0 +1,14 @@
+#satu{
+	text-align: center;
+	background-color: #696969;
+}
+#pilihan{
+	text-align: center;
+	font-size: 35;
+	background-color: #C6C6C6;
+}
+
+#pilihan li{
+	margin-top:5px;
+	list-style: none;
+}
