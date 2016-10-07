@@ -75,6 +75,33 @@ INSERT INTO `makanan` (`IdMakanan`, `Nama`, `harga`, `stock`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rokok`
+--
+
+CREATE TABLE `rokok` (
+  `IdRokok` int(11) NOT NULL,
+  `Nama` varchar(255) DEFAULT NULL,
+  `harga` int(11) DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cemilan`
+--
+
+CREATE TABLE `cemilan` (
+  `IdCemilan` int(11) NOT NULL,
+  `Nama` varchar(255) DEFAULT NULL,
+  `harga` int(11) DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+
+--
 -- Table structure for table `member`
 --
 
@@ -102,24 +129,25 @@ CREATE TABLE `minuman` (
   `IdMinuman` int(11) NOT NULL,
   `Nama` varchar(255) DEFAULT NULL,
   `harga` int(11) DEFAULT NULL,
-  `stock` int(11) DEFAULT NULL
+  `stock` int(11) DEFAULT NULL,
+  `tipe` int(1) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `minuman`
 --
 
-INSERT INTO `minuman` (`IdMinuman`, `Nama`, `harga`, `stock`) VALUES
-(1, 'minA', 40000, 100),
-(2, 'minB', 50000, 100),
-(3, 'minC', 100000, 100),
-(4, 'minD', 150000, 100),
-(5, 'minE', 200000, 100),
-(6, 'minF', 250000, 100),
-(7, 'minG', 500000, 100),
-(8, 'minH', 300000, 100),
-(9, 'minI', 1000000, 100),
-(10, 'minJ', 1200000, 100);
+INSERT INTO `minuman` (`IdMinuman`, `Nama`, `harga`, `stock`, `tipe`) VALUES
+(1, 'minA', 40000, 100,0),
+(2, 'minB', 50000, 100,1),
+(3, 'minC', 100000, 100,0),
+(4, 'minD', 150000, 100,0),
+(5, 'minE', 200000, 100,1),
+(6, 'minF', 250000, 100,1),
+(7, 'minG', 500000, 100,0),
+(8, 'minH', 300000, 100,1),
+(9, 'minI', 1000000, 100,0),
+(10, 'minJ', 1200000, 100,0);
 
 -- --------------------------------------------------------
 
@@ -150,7 +178,8 @@ INSERT INTO `pengguna` (`IdPengguna`, `pass`, `jenis`) VALUES
 CREATE TABLE `pesanan` (
   `IdPesanan` int(11) NOT NULL,
   `IdInvoice` int(11) DEFAULT NULL,
-  `harga` int(11) DEFAULT NULL
+  `harga` int(11) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -163,6 +192,31 @@ CREATE TABLE `pesanan_makanan` (
   `IdPesanan` int(11) DEFAULT NULL,
   `IdMakanan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesanan_rokok`
+--
+
+CREATE TABLE `pesanan_rokok` (
+  `IdPesanan` int(11) DEFAULT NULL,
+  `IdRokok` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesanan_cemilan`
+--
+
+CREATE TABLE `pesanan_cemilan` (
+  `IdPesanan` int(11) DEFAULT NULL,
+  `IdCemilan` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 -- --------------------------------------------------------
 
