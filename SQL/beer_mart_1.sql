@@ -273,7 +273,22 @@ INSERT INTO `user` (`tipe`, `username`, `hash`) VALUES
 --
 -- Indexes for dumped tables
 --
+--
+-- Table structure for table `paket`
+--
 
+CREATE TABLE `paket` (
+  `idPaket` int(11) NOT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `idMinuman` int(11) NOT NULL,
+  `jumlah` int(11) DEFAULT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+--
+-- Indexes for table `paket`
+--
+ALTER TABLE `paket`
+  ADD PRIMARY KEY (`idPaket`),
+  ADD KEY `idMinuman` (`idMinuman`);
 --
 -- Indexes for table `invoice`
 --
@@ -371,6 +386,12 @@ ALTER TABLE `pesanan_makanan`
 ALTER TABLE `pesanan_minuman`
   ADD CONSTRAINT `pesanan_minuman_ibfk_1` FOREIGN KEY (`IdPesanan`) REFERENCES `pesanan` (`IdPesanan`),
   ADD CONSTRAINT `pesanan_minuman_ibfk_2` FOREIGN KEY (`IdMinuman`) REFERENCES `minuman` (`IdMinuman`);
+--
+-- Constraints for table `paket`
+--
+ALTER TABLE `paket`
+  ADD CONSTRAINT `paket_ibfk_1` FOREIGN KEY (`IdMinuman`) REFERENCES `minuman` (`IdMinuman`),
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
