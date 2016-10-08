@@ -18,6 +18,7 @@
 		}
 		else{
 		echo "password salah </br>";
+		session_destroy();
 		echo '<a href="index.php">back</a>';
 		}
 	
